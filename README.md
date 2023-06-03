@@ -18,4 +18,4 @@ python manage.py runserver
 
 tạo một đường dẫn "D:\\Document-CSDLDPT" rồi nhét đống pdf vào đó hoặc là sửa biến file_path trong views.py 
 
-pdf file ở trong Pre-data-Text-similarity-He-CSDL-DPT
+pdf file ở trong repo Pre-data-Text-similarity-He-CSDL-DPT
