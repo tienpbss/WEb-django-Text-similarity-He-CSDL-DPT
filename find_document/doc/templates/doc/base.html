@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background: linear-gradient(128.74deg,rgba(85,224,255,.1) 19.35%,rgba(113,143,255,.1) 69.54%,rgba(202,88,255,.1) 116.27%);
+        }
+    
+        h1 {
+          text-align: center;
+        }
+    
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+    
+        .upload-form {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        .file-label {
+          display: inline-block;
+          background-color: #3498db;
+          color: #fff;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+    
+        .file-label:hover {
+          background-color: #2980b9;
+        }
+    
+        .file-name {
+          margin-top: 10px;
+        }
+    
+        .results {
+          margin-top: 20px;
+        }
+    
+        .result-item {
+          margin-bottom: 10px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          background-color: #ffffff;
+          display: flex;
+          justify-content: space-between;
+        }
+    
+        .result-item a {
+          text-decoration: none;
+          color: #000;
+          margin-right: 10px;
+        }
+    
+        .download-button {
+          background-color: #27ae60;
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 5px;
+          text-decoration: none;
+        }
+    
+        .download-button:hover {
+          background-color: #219352;
+        }
+
+        input {
+          border: 1px solid black;
+          padding: 5px;
+          border-radius: 5px;
+          background-color: #ffffff;
+        }
+
+        input[type=file]::file-selector-button {
+          margin-right: 20px;
+          border: none;
+          background: #084cdf;
+          padding: 10px 20px;
+          border-radius: 10px;
+          color: #fff;
+          cursor: pointer;
+          transition: background .2s ease-in-out;
+        }
+
+        input[type=file]::file-selector-button:hover {
+          background: #0d45a5;
+        }
+
+        button {
+          background-color: #0D6EFD;
+          padding: 10px 20px;
+          color: white;
+          border: none;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+          transition-duration: 0.4s;
+          border-radius: 4px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+
+</body>
+</html>

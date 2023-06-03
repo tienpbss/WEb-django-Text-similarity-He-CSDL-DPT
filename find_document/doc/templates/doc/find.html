@@ -1,0 +1,46 @@
+{% extends "doc/base.html" %} {% block title %} Search Document {% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Similar PDF Finder</h1>
+
+  <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="upload-form">
+      {{ form }}
+      <div class="file-name"></div>
+      <button type="Submit">Submit</button>
+    </div>
+  </form>  
+
+  {% if not files %}
+      {% for i in '12345' %}
+        <div class="result-item">
+          <a href="#" class="result-link">Result {{ i }}</a>
+          <a href="#" class="download-button">Download</a>
+        </div>
+      {% endfor %}
+  {% else %}
+    {% for file in files %}
+        <div class="result-item">
+          <a href="{% url 'doc:pdf_view' file.name %}" class="result-link" >{{ file.name }} | Match rate: {{file.score}}</a>
+          <a href="{% url 'doc:pdf_view' file.name %}" class="download-button" >View</a>
+        </div>
+
+    {% endfor %}
+  {% endif  %}
+</div>
+
+<script>
+  const fileInput = document.getElementById("file");
+  const fileNameLabel = document.querySelector(".file-name");
+
+  fileInput.addEventListener("change", function (e) {
+    const file = e.target.files[0];
+    if (file) {
+      fileNameLabel.textContent = file.name;
+    } else {
+      fileNameLabel.textContent = "";
+    }
+  });
+</script>
+{% endblock %}
