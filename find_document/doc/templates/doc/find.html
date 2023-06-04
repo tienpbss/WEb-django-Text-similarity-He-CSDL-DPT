@@ -22,8 +22,8 @@
   {% else %}
     {% for file in files %}
         <div class="result-item">
-          <a href="{% url 'doc:pdf_view' file.name %}" class="result-link" >{{ file.name }} | Match rate: {{file.score}}</a>
-          <a href="{% url 'doc:pdf_view' file.name %}" class="download-button" >View</a>
+          <a href="{% url 'doc:pdf_view' file.name %}" target="_blank" class="result-link"  >{{ file.name }} | Match rate: {{file.score}}</a>
+          <a href="{% url 'doc:pdf_view' file.name %}" target="_blank" class="download-button" >View</a>
         </div>
 
     {% endfor %}
